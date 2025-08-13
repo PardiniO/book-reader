@@ -10,6 +10,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { LibraryComponent } from './pages/library/library.component';
 import { ReaderComponent } from './pages/reader/reader.component';
 import { ExploreComponent } from './pages/explore/explore.component';
+import { LogInComponent } from './pages/log-in/log-in.component';
+import { LogOnComponent } from './pages/log-on/log-on.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { ExploreComponent } from './pages/explore/explore.component';
     HomeComponent,
     LibraryComponent,
     ReaderComponent,
-    ExploreComponent
+    ExploreComponent,
+    LogInComponent,
+    LogOnComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
