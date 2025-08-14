@@ -1,3 +1,4 @@
+import { HttpClient } from "@angular/common/http";
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideHttpClient } from "@angular/common/http";
@@ -31,7 +32,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClient
   ],
   providers: [
     provideHttpClient()

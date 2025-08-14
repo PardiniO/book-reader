@@ -1,1 +1,35 @@
-<p>log-in works!</p>
+<div>
+    <h2>Log In</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="username">Username or email<span>*</span></label>
+            <input type="text" id="username" formControlName="username" 
+                [class.error]="get('username')?.invalid && get('username')?.touched"
+                [class.valid]="get('username')?.valid && get('username')?.touched"/>
+                [class.error]="get('email')?.invalid && get('email')?.touched"
+                [class.valid]="get('email')?.valid && get('email')?.touched"/>
+            <div class="error-message" 
+                *ngIf="get('username')?.invalid && get('username')?.touched"
+                *ngIf="get('email')?.invalid && get('email')?.touched">
+                <small *ngIf="get('username')?.hasError('error')">Username is incorrect</small>
+                <small *ngIf="get('username')?.hasError('required')">Username is required</small>
+                <small *ngIf="get('email')?.hasError('email')">Invalid email format</small>
+                <small *ngIf="get('email')?.hasError('required')">Email is required</small>
+            </div>
+        </div>
+
+        <div>
+            <label for="password">Password<span>*</span></label>
+            <input type="password" id="password" formControlName="password" 
+                [class.error]="get('password')?.invalid && get('password')?.touched"
+                [class.valid]="get('password')?.valid && get('password')?.touched"/>
+        </div>
+
+        <div>
+            <button type="submit"
+                [disabled]="registerForm.invalid || send">
+                Log In
+            </button>
+        </div>
+    </form>
+</div>
