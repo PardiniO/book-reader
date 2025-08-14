@@ -10,6 +10,10 @@ export class LogInComponent implements OnInit {
   registerForm!: FormGroup;
   send: boolean = false;
 
+  email = '';
+  password = '';
+  errorMessage = '';
+
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -48,10 +52,7 @@ export class LogInComponent implements OnInit {
       return `This ${field} is required.`;
     }
     if (control?.hasError('email')) {
-      return `This ${field} is not a valid email.`;
-    }
-    if (control?.hasError('minlength')) {
-      return `This ${field} must be at least ${control.getError('minlength').requiredLength} characters long.`;
+      return `Incorrect email`;
     }
     return '';
   }
